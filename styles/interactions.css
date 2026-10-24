@@ -1,0 +1,170 @@
+/* Interactions and State Transitions */
+
+/* Drawer Open States */
+.drawer-open {
+  transform: translateX(0) !important;
+  visibility: visible !important;
+}
+
+.backdrop-open {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* Chat Messages Container */
+.chat-messages-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 20px;
+  overflow-y: auto;
+  flex: 1 1 auto;
+}
+
+.chat-bubble-user {
+  align-self: flex-end;
+  background-color: var(--s-color-fill-secondary-hover, #ebeae7);
+  color: var(--s-color-content-primary, #181715);
+  border-radius: 18px 18px 4px 18px;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  max-width: 85%;
+  word-break: break-word;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+[data-mode="dark"] .chat-bubble-user {
+  background-color: var(--s-color-surface-secondary, #22221f);
+  color: var(--s-color-content-primary, #f7f7f4);
+}
+
+.chat-bubble-ai {
+  align-self: flex-start;
+  background-color: transparent;
+  color: var(--s-color-content-primary, #181715);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-width: 90%;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+[data-mode="dark"] .chat-bubble-ai {
+  color: var(--s-color-content-primary, #f7f7f4);
+}
+
+.chat-bubble-ai-content {
+  background-color: var(--s-color-fill-secondary, #f7f7f4);
+  padding: 12px 16px;
+  border-radius: 4px 18px 18px 18px;
+  border: 1px solid var(--s-color-border-primary, rgba(0, 0, 0, 0.06));
+}
+
+[data-mode="dark"] .chat-bubble-ai-content {
+  background-color: var(--s-color-surface-primary, #181715);
+  border-color: var(--s-color-border-primary, rgba(255, 255, 255, 0.08));
+}
+
+/* Typing pulse animation */
+@keyframes typingPulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+.typing-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: currentColor;
+  border-radius: 50%;
+  animation: typingPulse 1.2s infinite ease-in-out;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* Custom scrollbar */
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: var(--s-color-border-primary, rgba(0, 0, 0, 0.1));
+  border-radius: 3px;
+}
+[data-mode="dark"] .custom-scroll::-webkit-scrollbar-thumb {
+  background: var(--s-color-border-primary, rgba(255, 255, 255, 0.15));
+}
+
+/* Floating Selection "Ask TshootthatLM" Popup */
+.selection-lm-popup {
+  position: absolute;
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  color: var(--s-color-content-primary, #181715);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+  font-family: var(--default-font-family, system-ui, sans-serif);
+  font-size: 0.8125rem;
+  line-height: 1.25;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(6px) scale(0.96);
+  transition: opacity 0.16s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.16s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.15s ease,
+              border-color 0.15s ease;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.selection-lm-popup.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.selection-lm-popup:hover {
+  background-color: var(--s-color-fill-secondary, #f7f7f4);
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+.selection-lm-popup:active {
+  transform: translateY(0) scale(0.97);
+}
+
+[data-mode="dark"] .selection-lm-popup {
+  background-color: var(--s-color-surface-elevated, #22221f);
+  color: var(--s-color-content-primary, #f7f7f4);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45), 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+[data-mode="dark"] .selection-lm-popup:hover {
+  background-color: var(--s-color-fill-primary-variant-hover, #2c2b28);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.selection-lm-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #c31800;
+  flex-shrink: 0;
+}
+
+.selection-lm-text {
+  letter-spacing: -0.01em;
+}
+

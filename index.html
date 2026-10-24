@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="tahaa" class="h-full antialiased">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Muhammad Taha Abid · Product Designer &amp; Builder</title>
+  <meta name="description"
+    content="Portfolio of Muhammad Taha Abid, a product designer and builder crafting digital products, brands, and startups." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://tahaa.com" />
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Muhammad Taha Abid · Product Designer &amp; Builder" />
+  <meta property="og:description"
+    content="Portfolio of Muhammad Taha Abid, a product designer and builder crafting digital products, brands, and startups." />
+  <meta property="og:url" content="https://tahaa.com" />
+  <meta property="og:site_name" content="Muhammad Taha Abid" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Muhammad Taha Abid · Product Designer &amp; Builder" />
+  <meta name="twitter:description"
+    content="Portfolio of Muhammad Taha Abid, a product designer and builder crafting digital products, brands, and startups." />
+
+  <!-- Icons -->
+  <link rel="icon" href="icon.svg" sizes="any" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="apple-icon.png" sizes="180x180" type="image/png" />
+
+  <!-- Fonts & Styles -->
+  <link rel="preload" href="media/9bf986576a67e941.p.3s_4z4byg0vu0.woff2" as="font" crossorigin="" type="font/woff2" />
+  <link rel="preload" href="media/6babc54cc0db7717.p.21sbfhjunker-.woff2" as="font" crossorigin="" type="font/woff2" />
+
+  <link rel="stylesheet" href="styles/fonts.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/interactions.css" />
+
+  <script>
+    try {
+      if (localStorage.getItem("tahaa_portfolio_mode") === "dark" || sessionStorage.getItem("mode") === "dark") {
+        document.documentElement.dataset.mode = "dark";
+      }
+    } catch (e) { }
+  </script>
+</head>
+
+<body class="min-h-full">
+  <div class="flex min-h-full flex-col">
+    <!-- Header -->
+    <header class="px-5 md:px-8">
+      <div class="mx-auto flex h-20 w-full max-w-[1376px] items-center justify-between">
+        <a class="flex items-center gap-2" aria-label="Home" href="index.html">
+          <span class="text-body-md">
+            <span class="text-content-primary font-medium">Muhammad Taha Abid</span>
+            <span class="hidden text-content-tertiary desktop:inline"> • Product Designer &amp; Builder</span>
+          </span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav aria-label="Main" class="hidden items-center gap-5 md:flex">
+          <a class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed motion-reduce:transition-none text-(--s-color-content-brand) hover:text-(--s-color-content-brand-hover) active:text-(--s-color-border-brand-active) disabled:text-(--s-color-border-brand-disabled) text-body-md rounded-8 p-0"
+            aria-current="page" href="index.html">
+            <span class="px-1">Work</span>
+          </a>
+
+          <a class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed motion-reduce:transition-none text-(--s-color-content-tertiary) hover:text-(--s-color-content-secondary) active:text-(--s-color-content-primary) disabled:text-(--s-color-content-tertiary-disabled) text-body-md rounded-8 p-0"
+            href="about.html">
+            <span class="px-1">About</span>
+          </a>
+          <a class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed motion-reduce:transition-none text-(--s-color-content-tertiary) hover:text-(--s-color-content-secondary) active:text-(--s-color-content-primary) disabled:text-(--s-color-content-tertiary-disabled) text-body-md rounded-8 p-0"
+            target="_blank" rel="noopener" href="https://taha-resume.vercel.app/">
+            <span class="px-1">Resume</span>
+          </a>
+          <a class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed motion-reduce:transition-none text-(--s-color-content-tertiary) hover:text-(--s-color-content-secondary) active:text-(--s-color-content-primary) disabled:text-(--s-color-content-tertiary-disabled) text-body-md rounded-8 p-0"
+            href="guides.html">
+            <span class="px-1">Guides</span>
+          </a>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="relative z-50 flex items-center gap-3 md:gap-6">
+          <button type="button"
+            class="theme-toggle-btn inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed motion-reduce:transition-none text-(--s-color-content-primary) hover:bg-(--s-color-fill-primary-variant-hover) active:bg-(--s-color-fill-primary-variant-active) disabled:text-(--s-color-content-primary-disabled) disabled:bg-transparent text-body-sm rounded-7 size-9"
+            aria-label="Switch to dark mode">
+            <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+              style="mask-image:url(icons/moon.svg);-webkit-mask-image:url(icons/moon.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+          </button>
+
+          <button id="tahaalm-trigger-btn" type="button"
+            class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed motion-reduce:transition-none bg-(--s-color-fill-brand-secondary) text-(--s-color-content-brand) hover:bg-(--s-color-fill-brand-secondary-hover) active:bg-(--s-color-fill-brand-secondary-active) text-body-md rounded-8 px-3 py-2">
+            <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+              style="mask-image:url(icons/sparkle.svg);-webkit-mask-image:url(icons/sparkle.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+            <span class="px-1 font-medium">tshootthatLM</span>
+          </button>
+
+          <button id="menu-toggle-btn" type="button"
+            class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed motion-reduce:transition-none text-(--s-color-content-primary) hover:bg-(--s-color-fill-primary-variant-hover) active:bg-(--s-color-fill-primary-variant-active) text-body-sm rounded-7 size-9 md:hidden"
+            aria-label="Open menu" aria-expanded="false">
+            <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+              style="mask-image:url(icons/panel-open.svg);-webkit-mask-image:url(icons/panel-open.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Backdrop -->
+      <div id="menu-backdrop" aria-hidden="true"
+        class="fixed inset-0 z-30 bg-content-primary/30 transition-opacity duration-(--s-motion-duration-slow) ease-standard motion-reduce:transition-none pointer-events-none opacity-0">
+      </div>
+
+      <!-- Mobile Menu Drawer -->
+      <div id="menu-drawer" role="dialog" aria-modal="true" aria-label="Menu" inert=""
+        class="fixed inset-y-0 right-0 z-40 flex w-[360px] max-w-[calc(100%-15px)] flex-col bg-fill-secondary-variant will-change-transform transition-[translate,visibility] duration-(--s-motion-duration-slow) ease-standard motion-reduce:transition-none invisible translate-x-full">
+        <div class="flex h-20 items-center px-5">
+          <button id="menu-close-btn" type="button"
+            class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed motion-reduce:transition-none text-(--s-color-content-primary) hover:bg-(--s-color-fill-primary-variant-hover) active:bg-(--s-color-fill-primary-variant-active) text-body-sm rounded-7 size-9"
+            aria-label="Close menu">
+            <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+              style="mask-image:url(icons/panel-open.svg);-webkit-mask-image:url(icons/panel-open.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+          </button>
+        </div>
+        <nav aria-label="Menu" class="flex flex-1 flex-col items-end justify-end gap-3 p-8">
+          <a class="flex items-center text-heading-lg font-medium text-content-secondary transition-colors hover:text-content-primary motion-reduce:transition-none"
+            href="index.html">Work</a>
+          <a class="flex items-center text-heading-lg font-medium text-content-secondary transition-colors hover:text-content-primary motion-reduce:transition-none"
+            href="about.html">About</a>
+          <a target="_blank" rel="noopener"
+            class="flex items-center text-heading-lg font-medium text-content-secondary transition-colors hover:text-content-primary motion-reduce:transition-none"
+            href="https://taha-resume.vercel.app/">
+            Resume
+            <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-8"
+              style="mask-image:url(icons/arrow-up-right.svg);-webkit-mask-image:url(icons/arrow-up-right.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+          </a>
+          <a class="flex items-center text-heading-lg font-medium text-content-secondary transition-colors hover:text-content-primary motion-reduce:transition-none"
+            href="guides.html">Guides</a>
+        </nav>
+        <div class="p-5">
+          <ul class="flex items-center justify-between p-5">
+            <li><a href="https://www.linkedin.com/in/tshootthat/" target="_blank" rel="noopener" aria-label="LinkedIn"
+                class="text-content-primary transition-opacity hover:opacity-70 motion-reduce:transition-none"><span
+                  aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+                  style="mask-image:url(icons/linkedin.svg);-webkit-mask-image:url(icons/linkedin.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span></a>
+            </li>
+            <li><a href="mailto:Tah.bhati302@gmail.com" aria-label="Mail"
+                class="text-content-primary transition-opacity hover:opacity-70 motion-reduce:transition-none"><span
+                  aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+                  style="mask-image:url(icons/mail.svg);-webkit-mask-image:url(icons/mail.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span></a>
+            </li>
+            <li><a href="https://x.com" target="_blank" rel="noopener" aria-label="X"
+                class="text-content-primary transition-opacity hover:opacity-70 motion-reduce:transition-none"><span
+                  aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+                  style="mask-image:url(icons/twitter.svg);-webkit-mask-image:url(icons/twitter.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span></a>
+            </li>
+            <li><a href="https://github.com/tahabhatti10" target="_blank" rel="noopener" aria-label="GitHub"
+                class="text-content-primary transition-opacity hover:opacity-70 motion-reduce:transition-none"><span
+                  aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+                  style="mask-image:url(icons/github.svg);-webkit-mask-image:url(icons/github.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- tshootthatLM Chat Backdrop -->
+      <div id="tahaalm-backdrop" aria-hidden="true"
+        class="fixed inset-0 z-[55] bg-content-primary/30 transition-opacity duration-(--s-motion-duration-slow) ease-standard motion-reduce:transition-none pointer-events-none opacity-0">
+      </div>
+
+      <!-- tshootthatLM Chat Drawer -->
+      <div id="tahaalm-drawer" role="dialog" aria-modal="true" aria-label="tshootthatLM chat" inert=""
+        class="fixed inset-y-0 right-0 z-[60] flex w-full flex-col bg-fill-primary-variant [background-image:linear-gradient(var(--s-color-fill-primary-disabled),var(--s-color-fill-primary-disabled))] will-change-transform transition-[translate,visibility] duration-(--s-motion-duration-slow) ease-standard motion-reduce:transition-none md:w-[600px] invisible translate-x-full">
+        <!-- tshootthatLM Drawer Header -->
+        <header class="flex shrink-0 items-center justify-between bg-fill-primary-variant p-5">
+          <span class="flex pr-11">
+            <button type="button"
+              class="theme-toggle-btn inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed motion-reduce:transition-none text-(--s-color-content-primary) hover:bg-(--s-color-fill-primary-variant-hover) active:bg-(--s-color-fill-primary-variant-active) text-body-sm rounded-7 size-9"
+              aria-label="Switch to dark mode">
+              <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+                style="mask-image:url(icons/moon.svg);-webkit-mask-image:url(icons/moon.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+            </button>
+          </span>
+          <span class="flex items-center gap-1.5 text-body-md text-content-primary">
+            <span aria-hidden="true" data-slot="icon"
+              class="inline-block shrink-0 bg-current size-6 text-(--s-color-fill-brand)"
+              style="mask-image:url(icons/sparkle.svg);-webkit-mask-image:url(icons/sparkle.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+            tshootthatLM
+            <span class="group relative flex items-center">
+              <button type="button" aria-label="About tshootthatLM" aria-describedby="tahaalm-disclaimer"
+                aria-expanded="false"
+                class="flex cursor-help items-center text-content-tertiary transition-colors duration-(--s-motion-duration-fast) ease-standard hover:text-content-primary motion-reduce:transition-none">
+                <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-3"
+                  style="mask-image:url(icons/info-12.svg);-webkit-mask-image:url(icons/info-12.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+              </button>
+              <span id="tahaalm-disclaimer" role="tooltip"
+                class="pointer-events-none absolute top-full left-1/2 z-10 mt-2 w-64 -translate-x-1/2 rounded-8 border border-(--s-color-border-primary) bg-surface-elevated p-3 text-left text-body-sm text-content-secondary transition-opacity duration-(--s-motion-duration-fast) ease-standard motion-reduce:transition-none opacity-0 group-focus-within:opacity-100 group-hover:opacity-100">
+                tshootthatLM is an AI chatbot, so it can get things wrong. Double-check anything important.
+              </span>
+            </span>
+          </span>
+          <span class="flex items-center gap-2">
+            <button id="tahaalm-reset-btn" type="button"
+              class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed motion-reduce:transition-none text-(--s-color-content-primary) hover:bg-(--s-color-fill-primary-variant-hover) active:bg-(--s-color-fill-primary-variant-active) disabled:text-(--s-color-content-primary-disabled) disabled:bg-transparent text-body-sm rounded-7 size-9"
+              aria-label="Start a new chat" disabled="">
+              <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+                style="mask-image:url(icons/refresh-cw.svg);-webkit-mask-image:url(icons/refresh-cw.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+            </button>
+            <button id="tahaalm-close-btn" type="button"
+              class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed motion-reduce:transition-none text-(--s-color-content-primary) hover:bg-(--s-color-fill-primary-variant-hover) active:bg-(--s-color-fill-primary-variant-active) text-body-sm rounded-7 size-9"
+              aria-label="Close tshootthatLM">
+              <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+                style="mask-image:url(icons/close.svg);-webkit-mask-image:url(icons/close.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+            </button>
+          </span>
+        </header>
+
+        <!-- Intro Screen -->
+        <div id="tahaalm-intro" class="flex flex-1 flex-col items-center justify-center gap-3 px-12 py-5 text-center">
+          <p class="text-body-xl text-content-secondary">Ask me anything about myself and my journey</p>
+        </div>
+
+        <!-- Question Suggestions -->
+        <div id="tahaalm-suggestions" class="flex w-full flex-col items-start px-3">
+          <button type="button"
+            class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard text-body-lg rounded-9 px-3 py-2 text-content-tertiary hover:text-content-secondary hover:bg-(--s-color-fill-primary-variant-hover)">
+            <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-5"
+              style="mask-image:url(icons/arrow-up-right.svg);-webkit-mask-image:url(icons/arrow-up-right.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+            <span class="px-1">What are you working on now?</span>
+          </button>
+          <button type="button"
+            class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard text-body-lg rounded-9 px-3 py-2 text-content-tertiary hover:text-content-secondary hover:bg-(--s-color-fill-primary-variant-hover)">
+            <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-5"
+              style="mask-image:url(icons/arrow-up-right.svg);-webkit-mask-image:url(icons/arrow-up-right.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+            <span class="px-1">Show me your best work</span>
+          </button>
+          <button type="button"
+            class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard text-body-lg rounded-9 px-3 py-2 text-content-tertiary hover:text-content-secondary hover:bg-(--s-color-fill-primary-variant-hover)">
+            <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-5"
+              style="mask-image:url(icons/arrow-up-right.svg);-webkit-mask-image:url(icons/arrow-up-right.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+            <span class="px-1">What's your design process</span>
+          </button>
+          <button type="button"
+            class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard text-body-lg rounded-9 px-3 py-2 text-content-tertiary hover:text-content-secondary hover:bg-(--s-color-fill-primary-variant-hover)">
+            <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-5"
+              style="mask-image:url(icons/arrow-up-right.svg);-webkit-mask-image:url(icons/arrow-up-right.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+            <span class="px-1">How do you use AI in design</span>
+          </button>
+        </div>
+
+        <!-- Live Chat Messages Container -->
+        <div id="tahaalm-messages" class="chat-messages-container custom-scroll hidden"></div>
+
+        <!-- Chat Input Form -->
+        <div class="relative shrink-0 p-3">
+          <form id="tahaalm-form"
+            class="flex flex-col rounded-[28px] border border-(--s-color-border-primary) bg-fill-primary-variant py-1 pr-1 pl-5">
+            <div class="flex items-end gap-3">
+              <textarea id="tahaalm-input" rows="1" maxlength="600" placeholder="Ask anything about Tahaa"
+                aria-label="Ask anything about Tahaa"
+                class="max-h-40 min-w-0 flex-1 resize-none self-center bg-transparent py-2 text-body-md text-content-primary outline-none placeholder:text-(--s-color-content-primary-disabled)"></textarea>
+              <button id="tahaalm-send-btn" type="submit"
+                class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed text-body-lg rounded-full size-11 bg-linear-to-b from-[#c31800] to-[#5d0b00] text-(--s-color-content-fixed-inverse) disabled:opacity-40 disabled:bg-none"
+                aria-label="Send message" disabled="">
+                <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+                  style="mask-image:url(icons/arrow-up.svg);-webkit-mask-image:url(icons/arrow-up.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex flex-1 flex-col bg-fill-primary-disabled p-4 md:p-8">
+      <div class="mx-auto flex w-full max-w-[1376px] flex-col gap-8">
+
+        <!-- Hero Intro & Experience Section -->
+        <div class="grid gap-8 desktop:grid-cols-2">
+          <!-- Introduction -->
+          <section aria-label="Introduction" class="flex flex-col gap-3 md:p-6 desktop:h-[460px] desktop:justify-end">
+            <h1 class="font-mono text-hero-sm text-content-primary md:text-hero-lg">
+              I'm Tahaa,<br />
+              <em class="not-italic text-content-brand">designing</em> the<br />
+              look, writing the<br />
+              <em class="not-italic text-content-brand">logic</em>.
+            </h1>
+          </section>
+
+          <!-- Experience -->
+          <section id="experience" aria-label="Experience"
+            class="flex flex-col gap-3 desktop:h-[460px] desktop:justify-end">
+            <div class="flex items-center gap-2.5">
+              <span class="w-12 shrink-0 font-mono text-body-sm text-content-tertiary">2026</span>
+              <a href="https://play.google.com/store/apps/details?id=com.ddotrip.cricktop&amp;hl=en" target="_blank"
+                rel="noopener"
+                class="w-32 shrink-0 text-body-md text-content-primary transition-colors duration-(--s-motion-duration-fast) ease-standard hover:text-content-brand motion-reduce:transition-none">Cricktop</a>
+              <span class="flex-1 text-right font-mono text-body-sm text-content-tertiary">Product Design &amp; Growth +
+                Engineering</span>
+            </div>
+
+            <div class="flex items-center gap-2.5">
+              <span class="w-12 shrink-0 font-mono text-body-sm text-content-tertiary">2025</span>
+              <a href="https://parhlai.com/" target="_blank" rel="noopener"
+                class="w-32 shrink-0 text-body-md text-content-primary transition-colors duration-(--s-motion-duration-fast) ease-standard hover:text-content-brand motion-reduce:transition-none">Parhlai</a>
+              <span class="flex-1 text-right font-mono text-body-sm text-content-tertiary">Product Design &amp;
+                Marketing lead</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <span class="w-12 shrink-0 font-mono text-body-sm text-content-tertiary">2025</span>
+              <a href="https://www.norenztech.com/" target="_blank" rel="noopener"
+                class="w-32 shrink-0 text-body-md text-content-primary transition-colors duration-(--s-motion-duration-fast) ease-standard hover:text-content-brand motion-reduce:transition-none">Norenztech</a>
+              <span class="flex-1 text-right font-mono text-body-sm text-content-tertiary">Product Design &amp; Graphics
+                Designer</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <span class="w-12 shrink-0 font-mono text-body-sm text-content-tertiary">2025</span>
+              <a href="https://www.linkedin.com/company/rivonn-gen/about/" target="_blank" rel="noopener"
+                class="w-32 shrink-0 text-body-md text-content-primary transition-colors duration-(--s-motion-duration-fast) ease-standard hover:text-content-brand motion-reduce:transition-none">Zellmont</a>
+              <span class="flex-1 text-right font-mono text-body-sm text-content-tertiary">Graphics &amp; Brand
+                Designer</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <span class="w-12 shrink-0 font-mono text-body-sm text-content-tertiary">2024</span>
+              <a href="#"
+                class="w-32 shrink-0 text-body-md text-content-primary transition-colors duration-(--s-motion-duration-fast) ease-standard hover:text-content-brand motion-reduce:transition-none">Sxtudios</a>
+              <span class="flex-1 text-right font-mono text-body-sm text-content-tertiary">Founder &amp; operations
+                manager</span>
+            </div>
+          </section>
+        </div>
+
+        <!-- Selected Work Section -->
+        <section id="work" aria-label="Selected work" class="grid gap-8 md:grid-cols-2">
+          <article class="flex flex-col gap-3">
+            <div class="relative aspect-video w-full overflow-hidden bg-surface-brand rounded-8">
+              <video aria-label="Emploi Rapide project preview"
+                class="h-full w-full object-cover transition-transform duration-300 hover:scale-105" autoplay muted loop
+                playsinline>
+                <source src="media/emploi-rapide.mp4" type="video/mp4" />
+                Your browser does not support the video preview.
+              </video>
+            </div>
+            <div class="flex items-start gap-4 text-body-md">
+              <h3 class="flex-1 font-normal text-content-secondary">Job listings, built to convert.</h3>
+              <p class="flex-1 text-right font-mono text-content-tertiary">Norenztech • 2025</p>
+            </div>
+          </article>
+          <article class="flex flex-col gap-3">
+            <a href="https://parhlai.com/" target="_blank" rel="noopener" class="group flex flex-col gap-3">
+              <div class="relative aspect-video w-full overflow-hidden bg-surface-brand rounded-8">
+                <img alt="Parhlai - Entry Test Prep in Pakistan"
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  src="covers/parhlai-cover.jpg" />
+              </div>
+              <div class="flex items-start gap-4 text-body-md">
+                <h3
+                  class="flex-1 font-normal text-content-secondary transition-colors duration-(--s-motion-duration-fast) group-hover:text-content-primary">
+                  AI guided solution for entry tests</h3>
+                <p
+                  class="flex-1 text-right font-mono text-content-tertiary transition-colors duration-(--s-motion-duration-fast) group-hover:text-content-brand">
+                  Parhlai • 2025</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="flex flex-col gap-3">
+            <a href="https://play.google.com/store/apps/details?id=com.ddotrip.cricktop&amp;hl=en" target="_blank"
+              rel="noopener" class="group flex flex-col gap-3">
+              <div class="relative aspect-video w-full overflow-hidden bg-surface-brand rounded-8">
+                <img alt="CrickTop - Apps on Google Play"
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  src="covers/cricktop-logo.png" />
+              </div>
+              <div class="flex items-start gap-4 text-body-md">
+                <h3
+                  class="flex-1 font-normal text-content-secondary transition-colors duration-(--s-motion-duration-fast) group-hover:text-content-primary">
+                  All Your Cricket in One Place</h3>
+                <p
+                  class="flex-1 text-right font-mono text-content-tertiary transition-colors duration-(--s-motion-duration-fast) group-hover:text-content-brand">
+                  CrickTop • 2026</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="flex flex-col gap-3">
+            <a href="https://www.instagram.com/cure.and.co" target="_blank"
+              rel="noopener" class="group flex flex-col gap-3">
+              <div class="relative aspect-video w-full overflow-hidden bg-surface-brand rounded-8">
+                <img alt="Cure &amp; Co. - Nail Studio"
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  src="covers/cure-and-co.png"
+                  onerror="if(this.src.endsWith('.png')){this.src='covers/cure-and-co.jpg';}else if(this.src.endsWith('.jpg')){this.src='covers/cure-and-co.png.jpeg';}" />
+              </div>
+              <div class="flex items-start gap-4 text-body-md">
+                <h3
+                  class="flex-1 font-normal text-content-secondary transition-colors duration-(--s-motion-duration-fast) group-hover:text-content-primary">
+                  Handcrafted Nail Art &amp; Care</h3>
+                <p
+                  class="flex-1 text-right font-mono text-content-tertiary transition-colors duration-(--s-motion-duration-fast) group-hover:text-content-brand">
+                  Cure &amp; Co. • 2026</p>
+              </div>
+            </a>
+          </article>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="flex flex-col-reverse items-center gap-3 p-5 md:flex-row md:justify-between desktop:px-32">
+      <p class="flex items-center gap-1.5 text-body-lg text-content-secondary">
+        <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+          style="mask-image:url(icons/shell.svg);-webkit-mask-image:url(icons/shell.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+        designed and coded by tahaa
+      </p>
+      <nav aria-label="Social links" class="flex items-center gap-5">
+        <a class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard text-(--s-color-content-tertiary) hover:text-(--s-color-content-secondary) text-body-md rounded-8 p-0"
+          href="https://www.linkedin.com/in/tshootthat/" target="_blank" rel="noopener">
+          <span class="px-1">LinkedIn</span>
+        </a>
+        <a class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard text-(--s-color-content-tertiary) hover:text-(--s-color-content-secondary) text-body-md rounded-8 p-0"
+          href="mailto:Tah.bhati302@gmail.com">
+          <span class="px-1">Mail</span>
+        </a>
+        <a class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard text-(--s-color-content-tertiary) hover:text-(--s-color-content-secondary) text-body-md rounded-8 p-0"
+          href="https://x.com" target="_blank" rel="noopener">
+          <span class="px-1">X</span>
+        </a>
+        <a class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard text-(--s-color-content-tertiary) hover:text-(--s-color-content-secondary) text-body-md rounded-8 p-0"
+          href="https://github.com/tahabhatti10" target="_blank" rel="noopener">
+          <span class="px-1">GitHub</span>
+        </a>
+      </nav>
+    </footer>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Muhammad Taha Abid",
+    "jobTitle": "Product Designer",
+    "description": "Portfolio of Muhammad Taha Abid, a product designer and builder crafting digital products, brands, and startups.",
+    "url": "https://tahaa.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "PK"
+    },
+    "knowsAbout": ["Product Design", "Graphic Design", "Product Building", "Startups", "UX Design"]
+  }
+  </script>
+
+  <!-- Interactive Scripts -->
+  <script src="scripts/icons.js"></script>
+  <script src="scripts/theme.js"></script>
+  <script src="scripts/drawer.js"></script>
+  <script src="scripts/tahaalm.js"></script>
+</body>
+
+</html>
