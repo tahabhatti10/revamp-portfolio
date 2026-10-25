@@ -328,18 +328,24 @@
         <!-- Selected Work Section -->
         <section id="work" aria-label="Selected work" class="grid gap-8 md:grid-cols-2">
           <article class="flex flex-col gap-3">
-            <div class="relative aspect-video w-full overflow-hidden bg-surface-brand rounded-8">
-              <video aria-label="Emploi Rapide project preview"
-                class="h-full w-full object-cover transition-transform duration-300 hover:scale-105" autoplay muted loop
-                playsinline>
-                <source src="media/emploi-rapide.mp4" type="video/mp4" />
-                Your browser does not support the video preview.
-              </video>
-            </div>
-            <div class="flex items-start gap-4 text-body-md">
-              <h3 class="flex-1 font-normal text-content-secondary">Job listings, built to convert.</h3>
-              <p class="flex-1 text-right font-mono text-content-tertiary">Norenztech • 2025</p>
-            </div>
+            <a href="emploi-rapide.html" class="group flex flex-col gap-3">
+              <div class="relative aspect-video w-full overflow-hidden bg-surface-brand rounded-8">
+                <video aria-label="Emploi Rapide project preview"
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" autoplay muted loop
+                  playsinline>
+                  <source src="media/emploi-rapide.mp4" type="video/mp4" />
+                  Your browser does not support the video preview.
+                </video>
+              </div>
+              <div class="flex items-start gap-4 text-body-md">
+                <h3
+                  class="flex-1 font-normal text-content-secondary transition-colors duration-(--s-motion-duration-fast) group-hover:text-content-primary">
+                  Job listings, built to convert.</h3>
+                <p
+                  class="flex-1 text-right font-mono text-content-tertiary transition-colors duration-(--s-motion-duration-fast) group-hover:text-content-brand">
+                  Norenztech • 2025</p>
+              </div>
+            </a>
           </article>
           <article class="flex flex-col gap-3">
             <a href="https://parhlai.com/" target="_blank" rel="noopener" class="group flex flex-col gap-3">
