@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="tahaa" class="h-full antialiased">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CrickTop Case Study · Muhammad Taha Abid</title>
+  <meta name="description"
+    content="All Your Cricket in One Place. Product Design case study for CrickTop by Muhammad Taha Abid." />
+  <meta name="robots" content="all, follow" />
+  <link rel="canonical" href="https://tahaa.com/cricktop" />
+
+  <!-- Icons -->
+  <link rel="icon" href="icon.svg" sizes="any" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="apple-icon.png" sizes="180x180" type="image/png" />
+
+  <!-- Fonts & Styles -->
+  <link rel="preload" href="media/9bf986576a67e941.p.3s_4z4byg0vu0.woff2" as="font" crossorigin="" type="font/woff2" />
+  <link rel="preload" href="media/6babc54cc0db7717.p.21sbfhjunker-.woff2" as="font" crossorigin="" type="font/woff2" />
+
+  <link rel="stylesheet" href="styles/fonts.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/interactions.css" />
+
+  <script>
+    try {
+      if (localStorage.getItem("tahaa_portfolio_mode") === "dark" || sessionStorage.getItem("mode") === "dark") {
+        document.documentElement.dataset.mode = "dark";
+      }
+    } catch (e) { }
+  </script>
+
+  <style>
+    /* Global reset & box-sizing */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #fbfbf9;
+      color: #181715;
+      font-family: var(--s-font-family-body, sans-serif);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Dark mode override */
+    [data-mode="dark"] body {
+      background-color: #121210;
+      color: #f7f7f4;
+    }
+
+    /* Keep drawers completely unrendered when closed so they can never create horizontal overflow */
+    #tahaalm-drawer.invisible,
+    #menu-drawer.invisible {
+      display: none !important;
+    }
+
+    /* Nav bar uses main.css utility classes (same as index.html) */
+
+    /* Main page container & grid */
+    .cs-main {
+      flex: 1;
+      width: 100%;
+      padding-inline: clamp(1.25rem, 6.7vw, 6.7vw);
+      padding-block: 2rem 5rem;
+    }
+
+    .cs-layout-grid {
+      width: 100%;
+      max-width: 1440px;
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr);
+      column-gap: clamp(2rem, 5vw, 4.5rem);
+      align-items: start;
+    }
+
+    /* Sticky left sidebar */
+    .cs-sidebar {
+      position: sticky;
+      top: 60px;
+      align-self: start;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .cs-back-link {
+      font-family: var(--s-font-family-body, sans-serif);
+      font-size: 0.82rem;
+      color: #605f5c;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: color 0.15s ease;
+    }
+
+    .cs-back-link:hover {
+      color: #181715;
+    }
+
+    [data-mode="dark"] .cs-back-link {
+      color: #a8a8a4;
+    }
+
+    [data-mode="dark"] .cs-back-link:hover {
+      color: #ffffff;
+    }
+
+    .cs-sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .cs-sidebar-link {
+      font-family: var(--s-font-family-body, sans-serif);
+      font-size: 0.82rem;
+      color: #8c8c88;
+      text-decoration: none;
+      transition: color 0.15s ease;
+      line-height: 1.5;
+    }
+
+    .cs-sidebar-link:hover {
+      color: #181715;
+    }
+
+    .cs-sidebar-link-active {
+      color: #181715 !important;
+      font-weight: 500;
+    }
+
+    [data-mode="dark"] .cs-sidebar-link {
+      color: #605f5c;
+    }
+
+    [data-mode="dark"] .cs-sidebar-link:hover {
+      color: #f7f7f4;
+    }
+
+    [data-mode="dark"] .cs-sidebar-link-active {
+      color: #f7f7f4 !important;
+      font-weight: 500;
+    }
+
+    /* Main Content Column */
+    .cs-content {
+      max-width: 720px;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .cs-breadcrumb {
+      font-family: var(--s-font-family-code, monospace);
+      font-size: 0.72rem;
+      color: #8c8c88;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.85rem;
+    }
+
+    .cs-title {
+      font-family: var(--s-font-family-body, sans-serif);
+      font-size: clamp(1.75rem, 2.4vw, 2.5rem);
+      line-height: 1.15;
+      font-weight: 350;
+      letter-spacing: -0.02em;
+      color: #181715;
+      margin: 0 0 1.5rem 0;
+    }
+
+    [data-mode="dark"] .cs-title {
+      color: #f7f7f4;
+    }
+
+    /* Hero Image */
+    .cs-hero-frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background-color: #000000;
+      overflow: hidden;
+      border-radius: 0;
+    }
+
+    .cs-hero-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 0;
+    }
+
+    /* Meta Row directly under hero image */
+    .cs-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      width: 100%;
+      margin-top: 1.25rem;
+    }
+
+    .cs-meta-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .cs-meta-tag {
+      font-family: var(--s-font-family-code, monospace);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #8c8c88;
+    }
+
+    .cs-meta-val {
+      font-family: var(--s-font-family-body, sans-serif);
+      font-size: 0.82rem;
+      color: #181715;
+      line-height: 1.35;
+    }
+
+    [data-mode="dark"] .cs-meta-val {
+      color: #deddd9;
+    }
+
+    .cs-meta-stack {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.35;
+      font-family: var(--s-font-family-body, sans-serif);
+      font-size: 0.82rem;
+      color: #181715;
+    }
+
+    [data-mode="dark"] .cs-meta-stack {
+      color: #deddd9;
+    }
+
+    /* Sections */
+    .cs-case-section {
+      margin-top: 4.5rem;
+      scroll-margin-top: 5rem;
+    }
+
+    .cs-section-label {
+      font-family: var(--s-font-family-code, monospace);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #8c8c88;
+      margin-bottom: 0.85rem;
+      display: block;
+    }
+
+    .cs-section-heading {
+      font-family: var(--s-font-family-body, sans-serif);
+      font-size: clamp(1.2rem, 1.7vw, 1.6rem);
+      line-height: 1.25;
+      font-weight: 400;
+      color: #181715;
+      margin: 0 0 1rem 0;
+    }
+
+    .cs-section-heading em {
+      font-style: italic;
+    }
+
+    [data-mode="dark"] .cs-section-heading {
+      color: #f7f7f4;
+    }
+
+    .cs-body-text {
+      font-family: var(--s-font-family-body, sans-serif);
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: #605f5c;
+      margin: 0 0 1rem 0;
+    }
+
+    [data-mode="dark"] .cs-body-text {
+      color: #a8a8a4;
+    }
+
+    /* 3 Pillar Columns */
+    .cs-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      width: 100%;
+      margin-top: 1.5rem;
+    }
+
+    .cs-pillar {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .cs-pillar-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #181715;
+      margin: 0;
+    }
+
+    [data-mode="dark"] .cs-pillar-title {
+      color: #f7f7f4;
+    }
+
+    .cs-pillar-body {
+      font-size: 0.78rem;
+      line-height: 1.5;
+      color: #737370;
+      margin: 0;
+    }
+
+    [data-mode="dark"] .cs-pillar-body {
+      color: #a8a8a4;
+    }
+
+    /* Goal list */
+    .cs-goal-list {
+      list-style-type: disc;
+      padding-left: 1.25rem;
+      margin: 0.75rem 0 1rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      color: #605f5c;
+      font-family: var(--s-font-family-body, sans-serif);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    [data-mode="dark"] .cs-goal-list {
+      color: #a8a8a4;
+    }
+
+    /* Key Decisions Blocks */
+    .cs-decision-block {
+      margin-top: 2rem;
+    }
+
+    .cs-decision-heading {
+      font-family: var(--s-font-family-body, sans-serif);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #181715;
+      margin: 0 0 0.5rem 0;
+    }
+
+    [data-mode="dark"] .cs-decision-heading {
+      color: #f7f7f4;
+    }
+
+    /* Device screenshots row */
+    .cs-device-row {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      padding-bottom: 0.5rem;
+      scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 1.25rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .cs-device-img {
+      height: clamp(340px, 34vw, 480px);
+      width: auto;
+      display: block;
+      object-fit: contain;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      background-color: #000000;
+    }
+
+    [data-mode="dark"] .cs-device-img {
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .cs-device-caption {
+      font-family: var(--s-font-family-code, monospace);
+      font-size: 0.72rem;
+      color: #8c8c88;
+      line-height: 1.4;
+      margin-top: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Action button for outcome */
+    .cs-action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background-color: #181715;
+      color: #ffffff;
+      font-family: var(--s-font-family-body, sans-serif);
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 0.55rem 1.15rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      margin-top: 0.5rem;
+      transition: background-color 0.15s ease, opacity 0.15s ease;
+    }
+
+    .cs-action-btn:hover {
+      background-color: #333330;
+    }
+
+    [data-mode="dark"] .cs-action-btn {
+      background-color: #f7f7f4;
+      color: #181715;
+    }
+
+    [data-mode="dark"] .cs-action-btn:hover {
+      background-color: #e5e5e0;
+    }
+
+    /* Footer */
+    .cs-footer {
+      width: 100%;
+      padding-inline: clamp(1.25rem, 6.7vw, 6.7vw);
+      padding-block: 2rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    [data-mode="dark"] .cs-footer {
+      border-top-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .cs-footer-inner {
+      width: 100%;
+      max-width: 1440px;
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .cs-footer-credit {
+      font-size: 0.82rem;
+      color: #737370;
+      margin: 0;
+    }
+
+    .cs-footer-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .cs-footer-link {
+      font-size: 0.82rem;
+      color: #737370;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .cs-footer-link:hover {
+      color: #181715;
+    }
+
+    [data-mode="dark"] .cs-footer-link:hover {
+      color: #ffffff;
+    }
+
+    /* Responsive Specifications */
+    @media (max-width: 1024px) {
+      .cs-layout-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .cs-sidebar {
+        display: none;
+      }
+      .cs-content {
+        max-width: 100%;
+        min-width: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .cs-title {
+        font-size: clamp(1.4rem, 4.5vw, 2rem);
+      }
+      .cs-meta-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+      }
+      .cs-pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+    }
+
+    @media (max-width: 640px) {
+      .cs-main,
+      .cs-footer {
+        padding-inline: 1rem;
+      }
+      .cs-title {
+        font-size: clamp(1.2rem, 5.5vw, 1.35rem);
+        line-height: 1.25;
+        overflow-wrap: break-word;
+      }
+      .cs-section-heading {
+        font-size: 1.15rem;
+      }
+      .cs-meta-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .cs-footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="min-h-full">
+  <div class="flex min-h-full flex-col">
+  <!-- Header -->
+  <header class="px-5 md:px-8">
+    <div class="mx-auto flex h-20 w-full max-w-[1376px] items-center justify-between">
+      <a class="flex items-center gap-2" aria-label="Home" href="index.html">
+        <span class="text-body-md">
+          <span class="text-content-primary font-medium">Muhammad Taha Abid</span>
+          <span class="hidden text-content-tertiary desktop:inline"> • Product Designer &amp; Builder</span>
+        </span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav aria-label="Main" class="hidden items-center gap-5 md:flex">
+        <a class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed motion-reduce:transition-none text-(--s-color-content-brand) hover:text-(--s-color-content-brand-hover) active:text-(--s-color-border-brand-active) disabled:text-(--s-color-border-brand-disabled) text-body-md rounded-8 p-0"
+          aria-current="page" href="index.html">
+          <span class="px-1">Work</span>
+        </a>
+
+        <a class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed motion-reduce:transition-none text-(--s-color-content-tertiary) hover:text-(--s-color-content-secondary) active:text-(--s-color-content-primary) disabled:text-(--s-color-content-tertiary-disabled) text-body-md rounded-8 p-0"
+          href="about.html">
+          <span class="px-1">About</span>
+        </a>
+        <a class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed motion-reduce:transition-none text-(--s-color-content-tertiary) hover:text-(--s-color-content-secondary) active:text-(--s-color-content-primary) disabled:text-(--s-color-content-tertiary-disabled) text-body-md rounded-8 p-0"
+          target="_blank" rel="noopener" href="https://taha-resume.vercel.app/">
+          <span class="px-1">Resume</span>
+        </a>
+        <a class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed motion-reduce:transition-none text-(--s-color-content-tertiary) hover:text-(--s-color-content-secondary) active:text-(--s-color-content-primary) disabled:text-(--s-color-content-tertiary-disabled) text-body-md rounded-8 p-0"
+          href="guides.html">
+          <span class="px-1">Guides</span>
+        </a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="relative z-50 flex items-center gap-3 md:gap-6">
+        <button type="button"
+          class="theme-toggle-btn inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed motion-reduce:transition-none text-(--s-color-content-primary) hover:bg-(--s-color-fill-primary-variant-hover) active:bg-(--s-color-fill-primary-variant-active) disabled:text-(--s-color-content-primary-disabled) disabled:bg-transparent text-body-sm rounded-7 size-9"
+          aria-label="Switch to dark mode">
+          <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+            style="mask-image:url(icons/moon.svg);-webkit-mask-image:url(icons/moon.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+        </button>
+
+        <button id="tahaalm-trigger-btn" type="button"
+          class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed motion-reduce:transition-none bg-(--s-color-fill-brand-secondary) text-(--s-color-content-brand) hover:bg-(--s-color-fill-brand-secondary-hover) active:bg-(--s-color-fill-brand-secondary-active) text-body-md rounded-8 px-3 py-2">
+          <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+            style="mask-image:url(icons/sparkle.svg);-webkit-mask-image:url(icons/sparkle.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+          <span class="px-1 font-medium">tshootthatLM</span>
+        </button>
+
+        <button id="menu-toggle-btn" type="button"
+          class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed motion-reduce:transition-none text-(--s-color-content-primary) hover:bg-(--s-color-fill-primary-variant-hover) active:bg-(--s-color-fill-primary-variant-active) text-body-sm rounded-7 size-9 md:hidden"
+          aria-label="Open menu" aria-expanded="false">
+          <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+            style="mask-image:url(icons/panel-open.svg);-webkit-mask-image:url(icons/panel-open.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Backdrop -->
+    <div id="menu-backdrop" aria-hidden="true"
+      class="fixed inset-0 z-30 bg-content-primary/30 transition-opacity duration-(--s-motion-duration-slow) ease-standard motion-reduce:transition-none pointer-events-none opacity-0">
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="menu-drawer" role="dialog" aria-modal="true" aria-label="Menu" inert=""
+      class="fixed inset-y-0 right-0 z-40 flex w-[360px] max-w-[calc(100%-15px)] flex-col bg-fill-secondary-variant will-change-transform transition-[translate,visibility] duration-(--s-motion-duration-slow) ease-standard motion-reduce:transition-none invisible translate-x-full">
+      <div class="flex h-20 items-center px-5">
+        <button id="menu-close-btn" type="button"
+          class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed motion-reduce:transition-none text-(--s-color-content-primary) hover:bg-(--s-color-fill-primary-variant-hover) active:bg-(--s-color-fill-primary-variant-active) text-body-sm rounded-7 size-9"
+          aria-label="Close menu">
+          <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+            style="mask-image:url(icons/panel-open.svg);-webkit-mask-image:url(icons/panel-open.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+        </button>
+      </div>
+      <nav aria-label="Menu" class="flex flex-1 flex-col items-end justify-end gap-3 p-8">
+        <a class="flex items-center text-heading-lg font-medium text-content-secondary transition-colors hover:text-content-primary motion-reduce:transition-none"
+          href="index.html">Work</a>
+        <a class="flex items-center text-heading-lg font-medium text-content-secondary transition-colors hover:text-content-primary motion-reduce:transition-none"
+          href="about.html">About</a>
+        <a target="_blank" rel="noopener"
+          class="flex items-center text-heading-lg font-medium text-content-secondary transition-colors hover:text-content-primary motion-reduce:transition-none"
+          href="https://taha-resume.vercel.app/">
+          Resume
+          <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-8"
+            style="mask-image:url(icons/arrow-up-right.svg);-webkit-mask-image:url(icons/arrow-up-right.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+        </a>
+        <a class="flex items-center text-heading-lg font-medium text-content-secondary transition-colors hover:text-content-primary motion-reduce:transition-none"
+          href="guides.html">Guides</a>
+      </nav>
+      <div class="p-5">
+        <ul class="flex items-center justify-between p-5">
+          <li><a href="https://www.linkedin.com/in/tshootthat/" target="_blank" rel="noopener" aria-label="LinkedIn"
+              class="text-content-primary transition-opacity hover:opacity-70 motion-reduce:transition-none"><span
+                aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+                style="mask-image:url(icons/linkedin.svg);-webkit-mask-image:url(icons/linkedin.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span></a>
+          </li>
+          <li><a href="mailto:Tah.bhati302@gmail.com" aria-label="Mail"
+              class="text-content-primary transition-opacity hover:opacity-70 motion-reduce:transition-none"><span
+                aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+                style="mask-image:url(icons/mail.svg);-webkit-mask-image:url(icons/mail.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span></a>
+          </li>
+          <li><a href="https://x.com" target="_blank" rel="noopener" aria-label="X"
+              class="text-content-primary transition-opacity hover:opacity-70 motion-reduce:transition-none"><span
+                aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+                style="mask-image:url(icons/twitter.svg);-webkit-mask-image:url(icons/twitter.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span></a>
+          </li>
+          <li><a href="https://github.com/tahabhatti10" target="_blank" rel="noopener" aria-label="GitHub"
+              class="text-content-primary transition-opacity hover:opacity-70 motion-reduce:transition-none"><span
+                aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+                style="mask-image:url(icons/github.svg);-webkit-mask-image:url(icons/github.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- tshootthatLM Chat Backdrop -->
+    <div id="tahaalm-backdrop" aria-hidden="true"
+      class="fixed inset-0 z-[55] bg-content-primary/30 transition-opacity duration-(--s-motion-duration-slow) ease-standard motion-reduce:transition-none pointer-events-none opacity-0">
+    </div>
+
+    <!-- tshootthatLM Chat Drawer -->
+    <div id="tahaalm-drawer" role="dialog" aria-modal="true" aria-label="tshootthatLM chat" inert=""
+      class="fixed inset-y-0 right-0 z-[60] flex w-full flex-col bg-fill-primary-variant [background-image:linear-gradient(var(--s-color-fill-primary-disabled),var(--s-color-fill-primary-disabled))] will-change-transform transition-[translate,visibility] duration-(--s-motion-duration-slow) ease-standard motion-reduce:transition-none md:w-[600px] invisible translate-x-full">
+      <!-- tshootthatLM Drawer Header -->
+      <header class="flex shrink-0 items-center justify-between bg-fill-primary-variant p-5">
+        <span class="flex pr-11">
+          <button type="button"
+            class="theme-toggle-btn inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed motion-reduce:transition-none text-(--s-color-content-primary) hover:bg-(--s-color-fill-primary-variant-hover) active:bg-(--s-color-fill-primary-variant-active) text-body-sm rounded-7 size-9"
+            aria-label="Switch to dark mode">
+            <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+              style="mask-image:url(icons/moon.svg);-webkit-mask-image:url(icons/moon.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+          </button>
+        </span>
+        <span class="flex items-center gap-1.5 text-body-md text-content-primary">
+          <span aria-hidden="true" data-slot="icon"
+            class="inline-block shrink-0 bg-current size-6 text-(--s-color-fill-brand)"
+            style="mask-image:url(icons/sparkle.svg);-webkit-mask-image:url(icons/sparkle.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+          tshootthatLM
+          <span class="group relative flex items-center">
+            <button type="button" aria-label="About tshootthatLM" aria-describedby="tahaalm-disclaimer"
+              aria-expanded="false"
+              class="flex cursor-help items-center text-content-tertiary transition-colors duration-(--s-motion-duration-fast) ease-standard hover:text-content-primary motion-reduce:transition-none">
+              <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-3"
+                style="mask-image:url(icons/info-12.svg);-webkit-mask-image:url(icons/info-12.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+            </button>
+            <span id="tahaalm-disclaimer" role="tooltip"
+              class="pointer-events-none absolute top-full left-1/2 z-10 mt-2 w-64 -translate-x-1/2 rounded-8 border border-(--s-color-border-primary) bg-surface-elevated p-3 text-left text-body-sm text-content-secondary transition-opacity duration-(--s-motion-duration-fast) ease-standard motion-reduce:transition-none opacity-0 group-focus-within:opacity-100 group-hover:opacity-100">
+              tshootthatLM is an AI chatbot, so it can get things wrong. Double-check anything important.
+            </span>
+          </span>
+        </span>
+        <span class="flex items-center gap-2">
+          <button id="tahaalm-reset-btn" type="button"
+            class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed motion-reduce:transition-none text-(--s-color-content-primary) hover:bg-(--s-color-fill-primary-variant-hover) active:bg-(--s-color-fill-primary-variant-active) disabled:text-(--s-color-content-primary-disabled) disabled:bg-transparent text-body-sm rounded-7 size-9"
+            aria-label="Start a new chat" disabled="">
+            <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+              style="mask-image:url(icons/refresh-cw.svg);-webkit-mask-image:url(icons/refresh-cw.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+          </button>
+          <button id="tahaalm-close-btn" type="button"
+            class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed motion-reduce:transition-none text-(--s-color-content-primary) hover:bg-(--s-color-fill-primary-variant-hover) active:bg-(--s-color-fill-primary-variant-active) text-body-sm rounded-7 size-9"
+            aria-label="Close tshootthatLM">
+            <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+              style="mask-image:url(icons/close.svg);-webkit-mask-image:url(icons/close.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+          </button>
+        </span>
+      </header>
+
+      <!-- Intro Screen -->
+      <div id="tahaalm-intro" class="flex flex-1 flex-col items-center justify-center gap-3 px-12 py-5 text-center">
+        <p class="text-body-xl text-content-secondary">Ask me anything about myself and my journey</p>
+      </div>
+
+      <!-- Question Suggestions -->
+      <div id="tahaalm-suggestions" class="flex w-full flex-col items-start px-3">
+        <button type="button"
+          class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard text-body-lg rounded-9 px-3 py-2 text-content-tertiary hover:text-content-secondary hover:bg-(--s-color-fill-primary-variant-hover)">
+          <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-5"
+            style="mask-image:url(icons/arrow-up-right.svg);-webkit-mask-image:url(icons/arrow-up-right.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+          <span class="px-1">What are you working on now?</span>
+        </button>
+        <button type="button"
+          class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard text-body-lg rounded-9 px-3 py-2 text-content-tertiary hover:text-content-secondary hover:bg-(--s-color-fill-primary-variant-hover)">
+          <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-5"
+            style="mask-image:url(icons/arrow-up-right.svg);-webkit-mask-image:url(icons/arrow-up-right.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+          <span class="px-1">Show me your best work</span>
+        </button>
+        <button type="button"
+          class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard text-body-lg rounded-9 px-3 py-2 text-content-tertiary hover:text-content-secondary hover:bg-(--s-color-fill-primary-variant-hover)">
+          <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-5"
+            style="mask-image:url(icons/arrow-up-right.svg);-webkit-mask-image:url(icons/arrow-up-right.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+          <span class="px-1">What's your design process</span>
+        </button>
+        <button type="button"
+          class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard text-body-lg rounded-9 px-3 py-2 text-content-tertiary hover:text-content-secondary hover:bg-(--s-color-fill-primary-variant-hover)">
+          <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-5"
+            style="mask-image:url(icons/arrow-up-right.svg);-webkit-mask-image:url(icons/arrow-up-right.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+          <span class="px-1">How do you use AI in design</span>
+        </button>
+      </div>
+
+      <!-- Live Chat Messages Container -->
+      <div id="tahaalm-messages" class="chat-messages-container custom-scroll hidden"></div>
+
+      <!-- Chat Input Form -->
+      <div class="relative shrink-0 p-3">
+        <form id="tahaalm-form"
+          class="flex flex-col rounded-[28px] border border-(--s-color-border-primary) bg-fill-primary-variant py-1 pr-1 pl-5">
+          <div class="flex items-end gap-3">
+            <textarea id="tahaalm-input" rows="1" maxlength="600" placeholder="Ask anything about Tahaa"
+              aria-label="Ask anything about Tahaa"
+              class="max-h-40 min-w-0 flex-1 resize-none self-center bg-transparent py-2 text-body-md text-content-primary outline-none placeholder:text-(--s-color-content-primary-disabled)"></textarea>
+            <button id="tahaalm-send-btn" type="submit"
+              class="inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap transition-colors duration-(--s-motion-duration-fast) ease-standard disabled:cursor-not-allowed text-body-lg rounded-full size-11 bg-linear-to-b from-[#c31800] to-[#5d0b00] text-(--s-color-content-fixed-inverse) disabled:opacity-40 disabled:bg-none"
+              aria-label="Send message" disabled="">
+              <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-6"
+                style="mask-image:url(icons/arrow-up.svg);-webkit-mask-image:url(icons/arrow-up.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Layout -->
+  <main class="cs-main">
+    <div class="cs-layout-grid">
+      <!-- Left Sidebar -->
+      <aside class="cs-sidebar">
+        <a href="index.html" class="cs-back-link">
+          <span aria-hidden="true">&larr;</span> Back
+        </a>
+        <nav class="cs-sidebar-nav" aria-label="Case study sections">
+          <a href="#overview" class="cs-sidebar-link cs-sidebar-link-active">Overview</a>
+          <a href="#problem" class="cs-sidebar-link">Problem</a>
+          <a href="#goal" class="cs-sidebar-link">Goal</a>
+          <a href="#design-direction" class="cs-sidebar-link">Design Direction</a>
+          <a href="#key-decisions" class="cs-sidebar-link">Key Decisions</a>
+          <a href="#outcome" class="cs-sidebar-link">Outcome</a>
+          <a href="#reflection" class="cs-sidebar-link">Reflection</a>
+        </nav>
+      </aside>
+
+      <!-- Main Column -->
+      <article class="cs-content">
+        <!-- Top of Page -->
+        <p class="cs-breadcrumb">CrickTop • Live on Google Play</p>
+        <h1 class="cs-title">All Your Cricket in One Place</h1>
+
+        <!-- Hero Image -->
+        <div class="cs-hero-frame">
+          <img src="covers/cricktop-logo.png" alt="All Your Cricket in One Place" loading="eager" />
+        </div>
+
+        <!-- Meta Row -->
+        <div class="cs-meta-grid">
+          <div class="cs-meta-col">
+            <span class="cs-meta-tag">ROLE</span>
+            <span class="cs-meta-val">Product Designer</span>
+          </div>
+          <div class="cs-meta-col">
+            <span class="cs-meta-tag">TIMELINE</span>
+            <span class="cs-meta-val">2026</span>
+          </div>
+          <div class="cs-meta-col">
+            <span class="cs-meta-tag">TEAM</span>
+            <span class="cs-meta-val">Solo Designer</span>
+          </div>
+          <div class="cs-meta-col">
+            <span class="cs-meta-tag">SKILLS</span>
+            <div class="cs-meta-stack">
+              <span>Branding</span>
+              <span>Product Planning</span>
+              <span>Product Design</span>
+              <span>Visual Design</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 1: OVERVIEW -->
+        <section id="overview" class="cs-case-section">
+          <span class="cs-section-label">OVERVIEW</span>
+          <h2 class="cs-section-heading">How do you bring live cricket and a social video feed into <em>one</em> app?</h2>
+          <p class="cs-body-text">CrickTop is a sports app for people who want to stay updated on cricket and other sports, keep track of scores and matches, and share video reels of the moments they care about. I designed the whole product, from the brand to the planning to every screen.</p>
+
+          <div class="cs-pillars-grid">
+            <div class="cs-pillar">
+              <h3 class="cs-pillar-title">Branding</h3>
+              <p class="cs-pillar-body">A bold italic CT mark, a dark interface and one lime accent.</p>
+            </div>
+            <div class="cs-pillar">
+              <h3 class="cs-pillar-title">Product Planning</h3>
+              <p class="cs-pillar-body">Mapping who the app is for and how scores, reels and messages fit together.</p>
+            </div>
+            <div class="cs-pillar">
+              <h3 class="cs-pillar-title">Product Design</h3>
+              <p class="cs-pillar-body">Designing every screen, from onboarding to camera, profile and settings.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 2: PROBLEM -->
+        <section id="problem" class="cs-case-section">
+          <span class="cs-section-label">PROBLEM</span>
+          <h2 class="cs-section-heading">Fans follow the game in one place and talk about it in another</h2>
+          <p class="cs-body-text">Scores and fixtures live in one app, while highlights and reactions are scattered across social platforms. For a cricket fan, that means switching apps just to check a score, watch a clip and share an opinion with friends.</p>
+        </section>
+
+        <!-- Section 3: GOAL -->
+        <section id="goal" class="cs-case-section">
+          <span class="cs-section-label">GOAL</span>
+          <h2 class="cs-section-heading">One app to follow, watch and share</h2>
+          <ul class="cs-goal-list">
+            <li>Follow live matches and see what is coming up</li>
+            <li>Watch, post and react to sports reels</li>
+            <li>Connect with other fans through follows, comments and direct messages</li>
+          </ul>
+          <p class="cs-body-text">The experience had to feel quick during a live match and energetic enough to suit a video-first feed.</p>
+        </section>
+
+        <!-- Section 4: DESIGN DIRECTION -->
+        <section id="design-direction" class="cs-case-section">
+          <span class="cs-section-label">DESIGN DIRECTION</span>
+          <h2 class="cs-section-heading">Dark by default, with one sharp lime accent</h2>
+          <p class="cs-body-text">I chose a dark interface with a sharp lime green accent. Black keeps attention on photos and video, which is what a reels-first app is about. The lime gives tabs, buttons and active states a clear signal and matches the pace of live sport. The CT logo is bold and italic, built to feel like movement.</p>
+          <p class="cs-body-text">I organized the product into six areas so a new user can understand the app quickly: onboarding, live feed and reels, discover and camera, settings, profile, and direct messages.</p>
+        </section>
+
+        <!-- Section 5: KEY DECISIONS -->
+        <section id="key-decisions" class="cs-case-section">
+          <span class="cs-section-label">KEY DECISIONS</span>
+
+          <!-- 5.1 -->
+          <div class="cs-decision-block">
+            <h3 class="cs-decision-heading">5.1 Onboarding that gets out of the way</h3>
+            <p class="cs-body-text">A simple splash screen leads into sign up with email, Google or Apple. Login and a verification code step follow. The aim was to get fans into the feed fast with as little typing as possible.</p>
+            <div class="cs-device-row">
+              <img src="intro.png" alt="CrickTop splash screen with bold italic CT logo" class="cs-device-img" loading="lazy" />
+              <img src="signup.png" alt="CrickTop sign up screen with email, Google and Apple options" class="cs-device-img" loading="lazy" />
+              <img src="auth.png" alt="CrickTop authentication and verification code entry screen" class="cs-device-img" loading="lazy" />
+            </div>
+            <p class="cs-device-caption">Splash screen, sign up and verification code step.</p>
+          </div>
+
+          <!-- 5.2 -->
+          <div class="cs-decision-block">
+            <h3 class="cs-decision-heading">5.2 A feed built for video</h3>
+            <p class="cs-body-text">The feed is split into Following, For You and Favorites, so fans can switch between their own circle and new content. Likes, comments, sharing and a more menu sit along the edge of the video. Comments and sharing open as sheets, so the viewer never leaves the reel. For new users who follow nobody yet, I designed an empty state that prompts them to connect contacts, invite friends or explore the feed.</p>
+            <div class="cs-device-row">
+              <img src="social_feed.png" alt="For You video feed with likes, comments and sharing controls" class="cs-device-img" loading="lazy" />
+              <img src="no_activity_prompt.png" alt="Empty state prompting fans to connect contacts, invite friends or explore the feed" class="cs-device-img" loading="lazy" />
+            </div>
+            <p class="cs-device-caption">The For You video feed and the empty state for new users.</p>
+          </div>
+
+          <!-- 5.3 -->
+          <div class="cs-decision-block">
+            <h3 class="cs-decision-heading">5.3 Discover, activity and the match calendar</h3>
+            <p class="cs-body-text">Search helps fans find people to follow. The Activity screen sorts likes, comments, tags and follow requests into tabs, so nothing gets buried. The calendar shows matches by team with start times and a live indicator, which ties the sports side of the app to the social side.</p>
+            <div class="cs-device-row">
+              <img src="activity.png" alt="Activity screen showing likes, follows and comments in the Likes tab" class="cs-device-img" loading="lazy" />
+              <img src="activity_news.png" alt="Activity screen with sports news cards mixed into the feed" class="cs-device-img" loading="lazy" />
+            </div>
+            <p class="cs-device-caption">Activity screen with social notifications and sports news cards.</p>
+          </div>
+
+          <!-- 5.4 -->
+          <div class="cs-decision-block">
+            <h3 class="cs-decision-heading">5.4 A camera made for sports moments</h3>
+            <p class="cs-body-text">Sporting moments are short, so posting needed to be quick. The camera includes capture and create modes, filters, a timer, text, and drawing with a color picker. After shooting, the post edit flow covers recent media, caption, location, a comments toggle and sending to friends, with a choice between saving a draft or posting right away.</p>
+          </div>
+
+          <!-- 5.5 -->
+          <div class="cs-decision-block">
+            <h3 class="cs-decision-heading">5.5 Profiles and privacy</h3>
+            <p class="cs-body-text">Profiles show a bio, follower counts and a grid of posts, with a separate saved page. I also designed a private account state, so fans who want more control can keep their content hidden until they approve followers.</p>
+            <div class="cs-device-row">
+              <img src="profile.png" alt="Profile screen with follower and post counts, quick actions and a create post tile" class="cs-device-img" loading="lazy" />
+            </div>
+            <p class="cs-device-caption">Profile screen with follower and post counts, quick actions and a create post tile.</p>
+          </div>
+
+          <!-- 5.6 -->
+          <div class="cs-decision-block">
+            <h3 class="cs-decision-heading">5.6 Settings and direct messages</h3>
+            <p class="cs-body-text">Settings cover password, account privacy, profile editing, notifications, language and translation, logout and deactivation. Destructive actions like logging out and deactivating ask for confirmation first, so nothing happens by accident. Direct messages support one to one chats and group chats.</p>
+            <div class="cs-device-row">
+              <img src="settings.png" alt="Settings screen with menu items for password, privacy, notifications and destructive actions" class="cs-device-img" loading="lazy" />
+              <img src="logout_popup.png" alt="Logout confirmation dialog asking Are you sure you want to logout" class="cs-device-img" loading="lazy" />
+            </div>
+            <p class="cs-device-caption">Settings menu and logout confirmation dialog.</p>
+          </div>
+        </section>
+
+        <!-- Section 6: OUTCOME -->
+        <section id="outcome" class="cs-case-section">
+          <span class="cs-section-label">OUTCOME</span>
+          <h2 class="cs-section-heading">Live on Google Play</h2>
+          <p class="cs-body-text">CrickTop is live on Google Play. The result is a complete product, designed from brand identity through to final screens, that combines live sports tracking and a social video feed in one app.</p>
+          <a href="https://play.google.com/store/apps/details?id=com.ddotrip.cricktop&amp;hl=en" target="_blank" rel="noopener" class="cs-action-btn">
+            <span>View CrickTop on Google Play</span>
+            <span aria-hidden="true" data-slot="icon" class="inline-block shrink-0 bg-current size-4"
+              style="mask-image:url(icons/arrow-up-right.svg);-webkit-mask-image:url(icons/arrow-up-right.svg);mask-size:contain;-webkit-mask-size:contain;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-position:center;-webkit-mask-position:center"></span>
+          </a>
+        </section>
+
+        <!-- Section 7: REFLECTION -->
+        <section id="reflection" class="cs-case-section">
+          <span class="cs-section-label">REFLECTION</span>
+          <h2 class="cs-section-heading">What I took from it</h2>
+          <p class="cs-body-text">The biggest challenge was balancing two very different needs in one product: the fast, information-first experience of checking a score, and the relaxed, scroll-first experience of a social feed. Keeping the navigation simple while holding that many features together pushed me to think carefully about hierarchy and about which actions deserve space on each screen.</p>
+          <p class="cs-body-text">The camera was the other big learning point. Packing filters, timers, text and drawing into a small screen without making it feel crowded meant being strict about what is visible at each step.</p>
+          <p class="cs-body-text">Designing the whole product myself, from branding to final screens, taught me how much every early decision shapes the rest. If I continued the project, I would test the flows with real fans and use what I learned to refine the feed and the camera.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="cs-footer">
+    <div class="cs-footer-inner">
+      <p class="cs-footer-credit">designed and coded by tahaa</p>
+      <nav aria-label="Social links" class="cs-footer-links">
+        <a class="cs-footer-link" href="https://www.linkedin.com/in/tshootthat/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="cs-footer-link" href="mailto:Tah.bhati302@gmail.com">Mail</a>
+        <a class="cs-footer-link" href="https://x.com" target="_blank" rel="noopener">X</a>
+        <a class="cs-footer-link" href="https://github.com/tahabhatti10" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="scripts/icons.js"></script>
+  <script src="scripts/theme.js"></script>
+  <script src="scripts/drawer.js"></script>
+  <script src="scripts/tahaalm.js"></script>
+
+  <script>
+    // Sidebar scroll-spy
+    (function () {
+      const sectionIds = [
+        'overview',
+        'problem',
+        'goal',
+        'design-direction',
+        'key-decisions',
+        'outcome',
+        'reflection'
+      ];
+
+      const navLinks = document.querySelectorAll('.cs-sidebar-link');
+
+      function updateActiveSidebar() {
+        const scrollPos = window.scrollY + 160;
+        let currentId = sectionIds[0];
+
+        for (const id of sectionIds) {
+          const el = document.getElementById(id);
+          if (el && el.offsetTop <= scrollPos) {
+            currentId = id;
+          }
+        }
+
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === '#' + currentId) {
+            link.classList.add('cs-sidebar-link-active');
+          } else {
+            link.classList.remove('cs-sidebar-link-active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', updateActiveSidebar, { passive: true });
+      updateActiveSidebar();
+    })();
+  </script>
+</body>
+
+</html>

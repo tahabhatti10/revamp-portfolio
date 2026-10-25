@@ -5,9 +5,6 @@
   function getPreferredTheme() {
     const saved = localStorage.getItem(THEME_KEY) || sessionStorage.getItem("mode");
     if (saved) return saved;
-    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    }
     return "light";
   }
 
